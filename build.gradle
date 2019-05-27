@@ -1,0 +1,27 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.enterblock'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'ch.qos.logback:logback-classic:1.1.2'
+	compile 'ch.qos.logback:logback-core:1.1.2'
+	compile 'org.slf4j:slf4j-api:1.7.10'
+	// 조건부 설정을 사용하려면 아래의 디팬던시를 추가해 주어야 한다
+	compile 'org.codehaus.janino:janino:2.7.7'
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
